@@ -1,0 +1,22 @@
+# Core app dependencies
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+python-dotenv==1.0.0
+
+# API / test clients
+httpx==0.25.2
+requests==2.31.0
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Operator interface
+streamlit==1.64.0
+
+# Optional integrations for later production use
+groq>=0.9.0
+hindsight-client>=0.10.1
+# langchain==0.1.0
+# langchain-groq==0.0.1
+
+# Local demo memory does not require external SDKs

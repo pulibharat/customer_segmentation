@@ -3,6 +3,7 @@ Customer Support Agent with Hindsight Memory
 FastAPI application entry point
 """
 
+from app.api.routes import memory_client, router as api_router
 import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -11,8 +12,6 @@ import logging
 
 # Load environment variables
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-
-from app.api.routes import memory_client, router as api_router
 
 
 # Configure logging

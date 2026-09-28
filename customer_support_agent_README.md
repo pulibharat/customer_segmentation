@@ -150,6 +150,32 @@ Copy-Item .env.example .env
 # Edit .env and add GROQ_API_KEY and HINDSIGHT_API_KEY.
 ```
 
+### Start the application
+
+Start the services in this order using two separate PowerShell terminals.
+
+**Terminal 1: FastAPI backend**
+
+```powershell
+Set-Location C:\customer_support_agent
+& ".venv\Scripts\python.exe" -m uvicorn main:app --host 0.0.0.0 --port 8000
+```
+
+**Terminal 2: Streamlit user interface**
+
+```powershell
+Set-Location C:\customer_support_agent
+& ".venv\Scripts\python.exe" -m streamlit run frontend/app.py --server.port 8501
+```
+
+Open the application here:
+
+- User interface: http://localhost:8501
+- Backend API: http://localhost:8000
+- API documentation: http://localhost:8000/docs
+
+Keep both terminals running. If Streamlit reports that port `8501` is unavailable, the UI is already running or another process owns that port; use the existing http://localhost:8501 page instead of starting a second copy.
+
 ### Start the backend
 
 Run this in terminal 1:
